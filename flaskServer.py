@@ -1,5 +1,3 @@
-from crypt import methods
-from urllib import response
 from flask import Flask
 from flask import request, make_response, jsonify
 from flask_cors import CORS
@@ -20,7 +18,10 @@ def index():
 
 @app.route("/getYoutubeChats", methods=['GET', 'POST'])
 def responseYoutubeChats():
-    response = getYoutubeChats("HFi7I-Z-86E")
+    data = request.get_json()
+    videoID = data['videoID']
+
+    response = getYoutubeChats(videoID)
 
     return make_response(jsonify(response))
 

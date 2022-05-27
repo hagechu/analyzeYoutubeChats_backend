@@ -1,5 +1,4 @@
 import pytchat
-import time
 
 
 def getYoutubeChats(videoID):
@@ -20,6 +19,3 @@ def getYoutubeChats(videoID):
 
 # "dj2xt5wSA7A"
 # "HFi7I-Z-86E"
-
-
-getYoutubeChats("HFi7I-Z-86E")
