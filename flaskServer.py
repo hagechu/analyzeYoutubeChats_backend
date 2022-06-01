@@ -3,6 +3,7 @@ from flask import request, make_response, jsonify
 from flask_cors import CORS
 from markupsafe import Markup
 from getYoutubeChats import getYoutubeChats
+from getYoutubeChatsTest import getYoutubeChatsTest
 
 app = Flask(__name__)
 CORS(app, origins=["http://localhost:3000"])
@@ -22,6 +23,16 @@ def responseYoutubeChats():
     videoID = data['videoID']
 
     response = getYoutubeChats(videoID)
+
+    return make_response(jsonify(response))
+
+
+@app.route("/getYoutubeChatsTest", methods=['GET', 'POST'])
+def responseYoutubeChatsTest():
+    data = request.get_json()
+    videoID = data['videoID']
+
+    response = getYoutubeChatsTest(videoID)
 
     return make_response(jsonify(response))
 

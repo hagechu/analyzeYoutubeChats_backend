@@ -8,8 +8,6 @@ def getYoutubeChats(videoID):
 
     while chat.is_alive():
         for c in chat.get().items:
-            # chats[chat.get().items.index(c)] = {
-            #     "date": c.datetime, "name": c.author.name, "message": c.message}
             chats.append(
                 {"date": c.datetime, "name": c.author.name, "message": c.message})
 
